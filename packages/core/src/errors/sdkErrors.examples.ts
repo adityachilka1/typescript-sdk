@@ -7,7 +7,7 @@
  * @module
  */
 
-import { SdkError, SdkErrorCode } from './sdkErrors.js';
+import { SdkError, SdkErrorCode } from './sdkErrors';
 
 /**
  * Example: Throwing and catching SDK errors.

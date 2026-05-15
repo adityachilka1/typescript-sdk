@@ -10,10 +10,10 @@
  */
 
 // Auth error classes
-export { OAuthError, OAuthErrorCode } from '../../auth/errors.js';
+export { OAuthError, OAuthErrorCode } from '../../auth/errors';
 
 // SDK error types (local errors that never cross the wire)
-export { SdkError, SdkErrorCode } from '../../errors/sdkErrors.js';
+export { SdkError, SdkErrorCode } from '../../errors/sdkErrors';
 
 // Auth TypeScript types (NOT Zod schemas like OAuthMetadataSchema)
 export type {
@@ -30,13 +30,13 @@ export type {
     OAuthTokens,
     OpenIdProviderDiscoveryMetadata,
     OpenIdProviderMetadata
-} from '../../shared/auth.js';
+} from '../../shared/auth';
 
 // Auth utilities
-export { checkResourceAllowed, resourceUrlFromServerUrl } from '../../shared/authUtils.js';
+export { checkResourceAllowed, resourceUrlFromServerUrl } from '../../shared/authUtils';
 
 // Metadata utilities
-export { getDisplayName } from '../../shared/metadataUtils.js';
+export { getDisplayName } from '../../shared/metadataUtils';
 
 // Protocol types (NOT the Protocol class itself or mergeCapabilities)
 export type {
@@ -48,11 +48,11 @@ export type {
     RequestHandlerSchemas,
     RequestOptions,
     ServerContext
-} from '../../shared/protocol.js';
-export { DEFAULT_REQUEST_TIMEOUT_MSEC } from '../../shared/protocol.js';
+} from '../../shared/protocol';
+export { DEFAULT_REQUEST_TIMEOUT_MSEC } from '../../shared/protocol';
 
 // Task manager types (NOT TaskManager class itself — internal)
-export type { RequestTaskStore, TaskContext, TaskManagerOptions, TaskRequestOptions } from '../../shared/taskManager.js';
+export type { RequestTaskStore, TaskContext, TaskManagerOptions, TaskRequestOptions } from '../../shared/taskManager';
 
 // Response message types
 export type {
@@ -62,25 +62,25 @@ export type {
     ResultMessage,
     TaskCreatedMessage,
     TaskStatusMessage
-} from '../../shared/responseMessage.js';
-export { takeResult, toArrayAsync } from '../../shared/responseMessage.js';
+} from '../../shared/responseMessage';
+export { takeResult, toArrayAsync } from '../../shared/responseMessage';
 
 // stdio message framing utilities (for custom transport authors)
-export { deserializeMessage, ReadBuffer, serializeMessage } from '../../shared/stdio.js';
+export { deserializeMessage, ReadBuffer, serializeMessage } from '../../shared/stdio';
 
 // Transport types (NOT normalizeHeaders)
-export type { FetchLike, Transport, TransportSendOptions } from '../../shared/transport.js';
-export { createFetchWithInit } from '../../shared/transport.js';
-export { InMemoryTransport } from '../../util/inMemory.js';
+export type { FetchLike, Transport, TransportSendOptions } from '../../shared/transport';
+export { createFetchWithInit } from '../../shared/transport';
+export { InMemoryTransport } from '../../util/inMemory';
 
 // URI Template
-export type { Variables } from '../../shared/uriTemplate.js';
-export { UriTemplate } from '../../shared/uriTemplate.js';
+export type { Variables } from '../../shared/uriTemplate';
+export { UriTemplate } from '../../shared/uriTemplate';
 
 // Types — all TypeScript types (standalone interfaces + schema-derived).
 // This is the one intentional `export *`: types.ts contains only spec-derived TS
 // types, and every type there should be public. See comment in types.ts.
-export * from '../../types/types.js';
+export * from '../../types/types';
 
 // Constants
 export {
@@ -94,13 +94,13 @@ export {
     PARSE_ERROR,
     RELATED_TASK_META_KEY,
     SUPPORTED_PROTOCOL_VERSIONS
-} from '../../types/constants.js';
+} from '../../types/constants';
 
 // Enums
-export { ProtocolErrorCode } from '../../types/enums.js';
+export { ProtocolErrorCode } from '../../types/enums';
 
 // Error classes
-export { ProtocolError, UrlElicitationRequiredError } from '../../types/errors.js';
+export { ProtocolError, UrlElicitationRequiredError } from '../../types/errors';
 
 // Type guards and message parsing
 export {
@@ -116,10 +116,10 @@ export {
     isJSONRPCResultResponse,
     isTaskAugmentedRequestParams,
     parseJSONRPCMessage
-} from '../../types/guards.js';
+} from '../../types/guards';
 
 // Experimental task types and classes
-export { assertClientRequestTaskCapability, assertToolsCallTaskCapability } from '../../experimental/tasks/helpers.js';
+export { assertClientRequestTaskCapability, assertToolsCallTaskCapability } from '../../experimental/tasks/helpers';
 export type {
     BaseQueuedMessage,
     CreateTaskOptions,
@@ -133,16 +133,16 @@ export type {
     TaskServerContext,
     TaskStore,
     TaskToolExecution
-} from '../../experimental/tasks/interfaces.js';
-export { isTerminal } from '../../experimental/tasks/interfaces.js';
-export { InMemoryTaskMessageQueue, InMemoryTaskStore } from '../../experimental/tasks/stores/inMemory.js';
+} from '../../experimental/tasks/interfaces';
+export { isTerminal } from '../../experimental/tasks/interfaces';
+export { InMemoryTaskMessageQueue, InMemoryTaskStore } from '../../experimental/tasks/stores/inMemory';
 
 // Validator types and classes
-export type { SpecTypeName, SpecTypes } from '../../types/specTypeSchema.js';
-export { isSpecType, specTypeSchemas } from '../../types/specTypeSchema.js';
-export type { StandardSchemaV1, StandardSchemaV1Sync, StandardSchemaWithJSON } from '../../util/standardSchema.js';
-export { AjvJsonSchemaValidator } from '../../validators/ajvProvider.js';
-export type { CfWorkerSchemaDraft } from '../../validators/cfWorkerProvider.js';
+export type { SpecTypeName, SpecTypes } from '../../types/specTypeSchema';
+export { isSpecType, specTypeSchemas } from '../../types/specTypeSchema';
+export type { StandardSchemaV1, StandardSchemaV1Sync, StandardSchemaWithJSON } from '../../util/standardSchema';
+export { AjvJsonSchemaValidator } from '../../validators/ajvProvider';
+export type { CfWorkerSchemaDraft } from '../../validators/cfWorkerProvider';
 // fromJsonSchema is intentionally NOT exported here — the server and client packages
 // provide runtime-aware wrappers that default to the appropriate validator via _shims.
-export type { JsonSchemaType, JsonSchemaValidator, jsonSchemaValidator, JsonSchemaValidatorResult } from '../../validators/types.js';
+export type { JsonSchemaType, JsonSchemaValidator, jsonSchemaValidator, JsonSchemaValidatorResult } from '../../validators/types';
